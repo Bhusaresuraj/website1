@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+/* Add this CSS to your styles */
+.typing-animation {
+  display: inline-block;
+  overflow: hidden; /* Ensures the text is hidden until revealed */
+  white-space: nowrap; /* Prevents text wrapping */
+  animation: typing 4s steps(5, end) forwards; /* Continuous typing effect */
+  margin-bottom: 0.5rem; /* Space between lines */
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 100%; } /* Typing effect for each line */
+}
+
+/* Add a delay for each line */
+.typing-animation:nth-child(1) {
+  animation-delay: 0s; /* First line */
+}
+
+.typing-animation:nth-child(2) {
+  animation-delay: 4s; /* Second line, adjust based on typing duration */
+}
+
+.typing-animation:nth-child(3) {
+  animation-delay: 8s; /* Third line, adjust based on typing duration */
+}
